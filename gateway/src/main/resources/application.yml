@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: clients
+              uri: lb://SERVICE-CLIENT
+              predicates:
+                - Path=/clients,/clients/**
+            - id: client-by-id
+              uri: lb://SERVICE-CLIENT
+              predicates:
+                - Path=/client/{id}
+            - id: service-client-by-name
+              uri: lb://SERVICE-CLIENT
+              predicates:
+                - Path=/SERVICE-CLIENT/**
+              filters:
+                - StripPrefix=1

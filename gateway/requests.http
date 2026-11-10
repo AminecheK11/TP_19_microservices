@@ -1,0 +1,13 @@
+GET http://localhost:8888/clients
+
+###
+GET http://localhost:8888/client/1
+
+### Comparaison directe
+GET http://localhost:8088/clients
+
+###
+GET http://localhost:8088/client/1
+
+### Routage par nom Eureka (majuscules)
+GET http://localhost:8888/SERVICE-CLIENT/clients

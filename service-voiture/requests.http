@@ -1,0 +1,26 @@
+GET http://localhost:8089/voitures
+
+###
+GET http://localhost:8089/voitures/1
+
+###
+GET http://localhost:8089/voitures/999999
+
+###
+GET http://localhost:8761/eureka/apps/SERVICE-VOITURE
+Accept: application/json
+
+### Voitures du client 1
+GET http://localhost:8089/voitures/client/1
+
+### Creation (modifier le matricule pour chaque nouvel essai)
+POST http://localhost:8089/voitures/1
+Content-Type: application/json
+
+{"marque":"Toyota","modele":"Yaris","matricule":"CAPTURE-001"}
+
+### Modification
+PUT http://localhost:8089/voitures/1
+Content-Type: application/json
+
+{"marque":"Renault","modele":"Clio V","matricule":"DEMO-001"}
